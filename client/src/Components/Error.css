@@ -1,0 +1,114 @@
+.error-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) ;
+    height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-content {
+    text-align: center;
+    color: black;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.8); */
+    z-index: 5;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.error-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.error-text span {
+    font-size: 8rem;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: errorFadeInDown 0.5s forwards;
+    animation-delay: calc(0.1s * var(--char-index));
+    color: #FF8000;
+}
+
+.error-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.return-home-btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background-color: #FF8000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.return-home-btn svg {
+    font-size: 20px;
+}
+
+.return-home-btn:hover {
+    background-color: #E67300;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.return-home-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes errorFadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .error-text span {
+        font-size: 6rem;
+    }
+
+    .error-content h1 {
+        font-size: 2rem;
+    }
+
+    .error-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-text span {
+        font-size: 4rem;
+    }
+
+    .error-content h1 {
+        font-size: 1.5rem;
+    }
+}
